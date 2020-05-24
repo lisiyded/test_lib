@@ -50,7 +50,7 @@ fclean: clean
 re: fclean all 
 
 bonus: $(BONUS_OBJS) $(OBJS)
-	@ar rc $(NAME) $(OBJS_OBJS)
+	@ar rc $(NAME) $(BONUS_OBJS)
 	@ranlib $(NAME)
 
 .PHONY: all clean fclean re
