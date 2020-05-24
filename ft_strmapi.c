@@ -6,9 +6,11 @@
 /*   By: spowers <spowers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 16:24:37 by spowers           #+#    #+#             */
-/*   Updated: 2020/05/23 16:26:22 by spowers          ###   ########.fr       */
+/*   Updated: 2020/05/24 18:32:09 by spowers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
     {
