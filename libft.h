@@ -6,7 +6,7 @@
 /*   By: spowers <spowers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 21:43:08 by spowers           #+#    #+#             */
-/*   Updated: 2020/05/24 17:48:21 by spowers          ###   ########.fr       */
+/*   Updated: 2020/05/24 17:53:58 by spowers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,11 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-int             ft_len_itoa(long nb);
 char	*ft_itoa(int n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
-static int	ft_cntwrd(char const *s, char c);
-static char			*ft_strndup(const char *s, size_t n);
 char	**ft_split(char const *s, char c);
 char *ft_srtjoin(char const *s1, char const *s2);
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
