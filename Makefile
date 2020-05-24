@@ -6,7 +6,7 @@
 #    By: spowers <spowers@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/24 03:52:12 by spowers           #+#    #+#              #
-#    Updated: 2020/05/24 17:29:54 by spowers          ###   ########.fr        #
+#    Updated: 2020/05/24 22:10:56 by spowers          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,29 +24,35 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 BONUS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
 	ft_lstiter.c ft_lstlast.c ft_lstnew.c ft_lstsize.c
 
-OBJS = ${SRCS:.c=.o}
+OBJS = $(SRCS:.c=.o)
 
-BONUS_OBJS = ${BONUS:.c=.o}
+BONUS_OBJS =  $(BONUS:.c=.o)
 
-CC		= gcc
-RM		= rm -f
+INCLUDES = libft.h
+FLAGS = -Wall -Werror -Wextra
+HEADER = libft.h
 
-CFLAGS = -Wall -Wextra -Werror -I
+all: $(NAME)
 
-all:			$(NAME)
-
-$(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+$(NAME): $(OBJS)
+	@ar rc $(NAME) $(OBJS)
+	@ranlib $(NAME)
 
 clean:
-				$(RM) $(OBJS) $(BONUS_OBJS)
+	@rm -f $(OBJS) $(BONUS_OBJS)
 
-fclean:			clean
-				$(RM) $(NAME)
+fclean: clean 
+	@rm -f $(NAME)
 
-re:				fclean $(NAME)
+%.o: %.c $(INCLUDES)/libft.h
+	gcc $(FLAGS) -c $? -o $@ -I$(INCLUDES)
 
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+re: fclean all 
 
-.PHONY:			all clean fclean re bonus
+bonus: $(BONUS_OBJS) $(OBJS)
+	@ar rc $(NAME) $(OBJS_OBJS)
+	@ranlib $(NAME)
+
+.PHONY: all clean fclean re
+
+
