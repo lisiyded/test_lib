@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: spowers <spowers@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/05/24 03:52:12 by spowers           #+#    #+#              #
-#    Updated: 2020/05/24 22:32:14 by spowers          ###   ########.fr        #
+#    Created: 2020/05/24 22:41:51 by spowers           #+#    #+#              #
+#    Updated: 2020/05/24 22:41:58 by spowers          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,5 +52,3 @@ bonus: $(BONUS_OBJS) $(OBJS)
 	@ranlib $(NAME)
 
 .PHONY: all clean fclean re
-
-
