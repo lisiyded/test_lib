@@ -6,10 +6,11 @@
 /*   By: spowers <spowers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/21 23:57:48 by spowers           #+#    #+#             */
-/*   Updated: 2020/05/22 00:05:45 by spowers          ###   ########.fr       */
+/*   Updated: 2020/05/24 18:12:16 by spowers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s)

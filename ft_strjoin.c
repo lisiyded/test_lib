@@ -6,11 +6,11 @@
 /*   By: spowers <spowers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 16:27:49 by spowers           #+#    #+#             */
-/*   Updated: 2020/05/23 16:30:44 by spowers          ###   ########.fr       */
+/*   Updated: 2020/05/24 18:27:47 by spowers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#inclde "libft.h"
+#include "libft.h"
 
 char *ft_srtjoin(char const *s1, char const *s2) 
 {

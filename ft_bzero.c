@@ -6,7 +6,7 @@
 /*   By: spowers <spowers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/21 23:32:56 by spowers           #+#    #+#             */
-/*   Updated: 2020/05/21 23:33:21 by spowers          ###   ########.fr       */
+/*   Updated: 2020/05/24 18:10:47 by spowers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,12 @@
 
 void	ft_bzero(void *b, size_t n)
 {
-	ft_memset(s, 0, n);
+	size_t num;
+
+	num = 0;
+	while (num < n)
+	{
+		((char *)b)[num] = 0;
+		 num++;
+	}
 }
