@@ -6,7 +6,7 @@
 /*   By: spowers <spowers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 21:43:08 by spowers           #+#    #+#             */
-/*   Updated: 2020/05/25 18:33:07 by spowers          ###   ########.fr       */
+/*   Updated: 2020/05/26 00:10:57 by spowers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void				*ft_memset(void *b, int c, size_t len);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strdup(const char *s1);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
-char				*ft_strlcpy(char *dst, const char *src, size_t n);
 size_t				ft_strlen(const char *s);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strnstr(const char *s1, const char *s2, size_t n);
@@ -65,5 +64,6 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstnew(void *content);
 int					ft_lstsize(t_list *lst);
+size_t				ft_strlcpy(char *dest, char *src, unsigned int size);
 
 #endif
