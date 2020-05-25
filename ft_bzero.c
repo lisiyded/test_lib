@@ -6,7 +6,7 @@
 /*   By: spowers <spowers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/21 23:32:56 by spowers           #+#    #+#             */
-/*   Updated: 2020/05/24 18:10:47 by spowers          ###   ########.fr       */
+/*   Updated: 2020/05/25 18:06:56 by spowers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void	ft_bzero(void *b, size_t n)
 	while (num < n)
 	{
 		((char *)b)[num] = 0;
-		 num++;
+		num++;
 	}
 }

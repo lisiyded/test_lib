@@ -6,17 +6,18 @@
 /*   By: spowers <spowers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 16:27:49 by spowers           #+#    #+#             */
-/*   Updated: 2020/05/24 18:27:47 by spowers          ###   ########.fr       */
+/*   Updated: 2020/05/25 18:11:56 by spowers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_srtjoin(char const *s1, char const *s2) 
+char	*ft_srtjoin(char const *s1, char const *s2)
 {
 	int		i;
 	int		j;
 	char	*str;
+
 	i = 0;
 	j = 0;
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));

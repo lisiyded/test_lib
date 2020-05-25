@@ -43,8 +43,7 @@ static char			*ft_strndup(const char *s, size_t n)
 	return (str);
 }
 
-
-char	**ft_split(char const *s, char c)
+char				**ft_split(char const *s, char c)
 {
 
 	int				i;
@@ -54,6 +53,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	k = 0;
+	j = i;
 	tab = (char **)malloc(sizeof(char *) * (ft_cntwrd(s, c)) + 1);
 	if (tab == NULL)
 		return (NULL);
@@ -61,7 +61,6 @@ char	**ft_split(char const *s, char c)
 	{
 		while (s[i] == c)
 			i++;
-		j = i;
 		while (s[i] && s[i] != c)
 			i++;
 		if (i > j)
