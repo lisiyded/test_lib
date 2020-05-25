@@ -6,7 +6,7 @@
 /*   By: spowers <spowers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 21:43:08 by spowers           #+#    #+#             */
-/*   Updated: 2020/05/26 00:10:57 by spowers          ###   ########.fr       */
+/*   Updated: 2020/05/26 00:39:07 by spowers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,6 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstnew(void *content);
 int					ft_lstsize(t_list *lst);
-size_t				ft_strlcpy(char *dest, char *src, unsigned int size);
+size_t				ft_strlcpy(char *dest, const char *src, unsigned int n);
 
 #endif
