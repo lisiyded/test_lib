@@ -6,7 +6,7 @@
 /*   By: spowers <spowers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 21:43:08 by spowers           #+#    #+#             */
-/*   Updated: 2020/05/26 00:39:07 by spowers          ###   ########.fr       */
+/*   Updated: 2020/05/26 18:12:10 by spowers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,8 @@ t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstnew(void *content);
 int					ft_lstsize(t_list *lst);
 size_t				ft_strlcpy(char *dest, const char *src, unsigned int n);
+void				*ft_memalloc(size_t size);
+void				ft_strarr_del(char **tab, size_t tab_size);
+char				*ft_strndup(const char *s, size_t n);
 
 #endif

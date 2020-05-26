@@ -6,69 +6,76 @@
 /*   By: spowers <spowers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 02:35:22 by spowers           #+#    #+#             */
-/*   Updated: 2020/05/24 02:38:44 by spowers          ###   ########.fr       */
+/*   Updated: 2020/05/26 18:03:22 by spowers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_cntwrd(char const *s, char c)
+static int				ft_count(char const *s, char c)
 {
-	unsigned int	i;
-	int				cntr;
+	unsigned int		i;
+	int		count;
 
 	i = 0;
-	cntr = 0;
+	count = 0;
 	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
 		if (s[i] != '\0')
-			cntr++;
+			count++;
 		while (s[i] && (s[i] != c))
 			i++;
 	}
-	return (cntr);
+	return (count);
 }
 
-static char			*ft_strndup(const char *s, size_t n)
+static char		**check_tab(char **tab, size_t tab_size)
 {
-	char			*str;
-
-	str = (char *)malloc(sizeof(char) * n + 1);
-	if (str == NULL)
-		return (NULL);
-	str = ft_strlcpy(str, s, n);
-	str[n] = '\0';
-	return (str);
-}
-
-char				**ft_split(char const *s, char c)
-{
-
-	int				i;
-	int				j;
-	int				k;
-	char			**tab;
+	size_t		i;
 
 	i = 0;
-	k = 0;
-	j = i;
-	tab = (char **)malloc(sizeof(char *) * (ft_cntwrd(s, c)) + 1);
-	if (tab == NULL)
-		return (NULL);
-	while (s[i])
+	if (tab)
 	{
-		while (s[i] == c)
-			i++;
-		while (s[i] && s[i] != c)
-			i++;
-		if (i > j)
+		while (i < tab_size)
 		{
-			tab[k] = ft_strndup(s + j, i - j);
-			k++;
+			if (!tab[i])
+			{
+				ft_strarr_del(tab, tab_size);
+				return (NULL);
+			}
+			i++;
 		}
 	}
-	tab[k] = NULL;
 	return (tab);
+}
+
+char			**ft_split(char const *s, char c)
+{
+	char		**tab;
+	size_t		i;
+	size_t		tab_i;
+
+	tab = NULL;
+	tab_i = 0;
+	if (s && c)
+	{
+		if ((tab = (char **)ft_memalloc(sizeof(char *) * (ft_count(s, c)))))
+		{
+			while (*s)
+			{
+				i = 0;
+				while ((char)*s == c)
+					s++;
+				while (*(s + i) && (char)*(s + i) != c)
+					i++;
+				if (i > 0)
+					tab[tab_i++] = ft_strndup(s, i);
+				s++;
+			}
+			tab[tab_i] = NULL;
+		}
+	}
+	return (check_tab(tab, tab_i));
 }

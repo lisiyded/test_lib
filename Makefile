@@ -6,7 +6,7 @@
 #    By: spowers <spowers@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/24 22:41:51 by spowers           #+#    #+#              #
-#    Updated: 2020/05/24 22:41:58 by spowers          ###   ########.fr        #
+#    Updated: 2020/05/26 18:10:36 by spowers          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
        ft_memmove.c ft_memset.c ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c \
        ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c \
        ft_putchar_fd.c ft_putendl_fd.c ft_putstr_fd.c ft_putnbr_fd.c \
-       ft_itoa.c ft_split.c ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_substr.c
+       ft_itoa.c ft_split.c ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_substr.c \
+       ft_strndup.c ft_strarr_del.c ft_memalloc.c
 
 BONUS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
 	ft_lstiter.c ft_lstlast.c ft_lstnew.c ft_lstsize.c
