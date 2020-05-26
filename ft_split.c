@@ -12,21 +12,19 @@
 
 #include "libft.h"
 
-static int				ft_count(char const *s, char c)
+static size_t	ft_count(char const *s, char c)
 {
-	unsigned int		i;
-	int		count;
+	size_t	count;
 
-	i = 0;
 	count = 1;
-	while (s[i])
+	while (*s)
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != '\0')
-			count++;
-		while (s[i] && (s[i] != c))
-			i++;
+		while ((char)*s == c)
+			s += 1;
+		if ((char)*s)
+			count += 1;
+		while ((char)*s && (char)*s != c)
+			s += 1;
 	}
 	return (count);
 }
