@@ -16,7 +16,7 @@ int		ft_len(long nb)
 {
 	int		len;
 
-	len = 1;
+	len = 0;
 	if (nb < 0)
 	{
 		nb = nb * -1;
