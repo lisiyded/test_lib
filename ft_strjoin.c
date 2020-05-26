@@ -6,13 +6,13 @@
 /*   By: spowers <spowers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 16:27:49 by spowers           #+#    #+#             */
-/*   Updated: 2020/05/25 18:11:56 by spowers          ###   ########.fr       */
+/*   Updated: 2020/05/26 19:35:16 by spowers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_srtjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	int		j;
