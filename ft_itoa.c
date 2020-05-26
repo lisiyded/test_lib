@@ -12,49 +12,48 @@
 
 #include "libft.h"
 
-int		ft_len(long nb)
+static int	length(int nb)
 {
-	int		len;
+	int	s;
 
-	len = 0;
+	if (nb == 0)
+		return (1);
+	s = 0;
 	if (nb < 0)
+		s = 1;
+	while (nb)
 	{
-		nb = nb * -1;
-		len++;
-	}
-	while (nb > 0)
-	{
+		s++;
 		nb = nb / 10;
-		len++;
 	}
-	return (len);
+	return (s);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
-	char	*str;
-	long	lete;
-	int		i;
+	char			*str;
+	int				len;
+	unsigned int	num;
 
-	lete = n;
-	i = ft_len(lete);
-	if (!(str = (char*)malloc(sizeof(char) * (i + 1))))
+	len = length(n);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
-	str[i--] = '\0';
-	if (lete == 0)
-	{
-		str[0] = 48;
-	}
-	if (lete < 0)
+	str[len] = '\0';
+	len--;
+	str[len] = '0';
+	if (n < 0)
 	{
 		str[0] = '-';
-		lete = lete * -1;
+		num = -n;
 	}
-	while (lete > 0)
+	else
+		num = n;
+	while (num)
 	{
-		str[i] = 48 + (lete % 10);
-		lete = lete / 10;
-		i--;
+		str[len] = ('0' + (num % 10));
+		num = num / 10;
+		len--;
 	}
 	return (str);
 }
