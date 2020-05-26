@@ -6,9 +6,11 @@
 /*   By: spowers <spowers@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 17:54:21 by spowers           #+#    #+#             */
-/*   Updated: 2020/05/26 17:57:45 by spowers          ###   ########.fr       */
+/*   Updated: 2020/05/26 18:19:01 by spowers          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char		*ft_strncpy(char *dest, const char *src, size_t n)
 {
