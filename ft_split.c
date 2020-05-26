@@ -18,7 +18,7 @@ static int				ft_count(char const *s, char c)
 	int		count;
 
 	i = 0;
-	count = 0;
+	count = 1;
 	while (s[i])
 	{
 		while (s[i] == c)
