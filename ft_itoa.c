@@ -16,7 +16,7 @@ int		ft_len(long nb)
 {
 	int		len;
 
-	len = 0;
+	len = 1;
 	if (nb < 0)
 	{
 		nb = nb * -1;
@@ -28,10 +28,6 @@ int		ft_len(long nb)
 		len++;
 	}
 	return (len);
-	if (nb == 0)
-	{
-		return (0);
-	}
 }
 
 char	*ft_itoa(int n)
@@ -45,6 +41,10 @@ char	*ft_itoa(int n)
 	if (!(str = (char*)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
 	str[i--] = '\0';
+	if (lete == 0)
+	{
+		str[0] = 48;
+	}
 	if (lete < 0)
 	{
 		str[0] = '-';
