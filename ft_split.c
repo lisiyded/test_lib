@@ -38,22 +38,6 @@ static int		ft_length(char const *str, char c)
 	return (n);
 }
 
-int				freefunct(void **tab)
-{
-	unsigned int	i;
-
-	if (tab == NULL)
-		return (0);
-	i = 0;
-	while (tab[i] != NULL)
-	{
-		free(tab[i]);
-		i = i + 1;
-	}
-	free(tab);
-	return (1);
-}
-
 char			**ft_split(char const *s, char c)
 {
 	int		i;
@@ -79,6 +63,6 @@ char			**ft_split(char const *s, char c)
 		new[i][j] = '\0';
 		i++;
 	}
-	free(new);
+	new[i] = 0;
 	return (new);
 }
