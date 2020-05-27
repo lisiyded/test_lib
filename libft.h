@@ -65,8 +65,5 @@ t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstnew(void *content);
 int					ft_lstsize(t_list *lst);
 size_t				ft_strlcpy(char *dest, const char *src, unsigned int n);
-void				*ft_memalloc(size_t size);
-void				ft_strarr_del(char **tab, size_t tab_size);
-char				*ft_strndup(const char *s, size_t n);
 
 #endif

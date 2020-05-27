@@ -12,68 +12,73 @@
 
 #include "libft.h"
 
-static size_t	ft_count(char const *s, char c)
+static int		ft_count(char const *s, char c)
 {
-	size_t	count;
+	int count;
 
-	count = 1;
+	count = 0;
 	while (*s)
 	{
-		while ((char)*s == c)
-			s += 1;
-		if ((char)*s)
-			count += 1;
-		while ((char)*s && (char)*s != c)
-			s += 1;
+		if (*s != c && (*(s + 1) == c || *(s + 1) == '\0'))
+			count++;
+		s++;
 	}
 	return (count);
 }
 
-static char		**check_tab(char **tab, size_t tab_size)
+static int		ft_length(char const *str, char c)
 {
-	size_t		i;
+	int n;
 
+	n = 0;
+	if (!str)
+		return (0);
+	while (str[n] != c && str[n])
+		n++;
+	return (n);
+}
+
+int				freefunct(void **tab)
+{
+	unsigned int	i;
+
+	if (tab == NULL)
+		return (0);
 	i = 0;
-	if (tab)
+	while (tab[i] != NULL)
 	{
-		while (i < tab_size)
-		{
-			if (!tab[i])
-			{
-				ft_strarr_del(tab, tab_size);
-				return (NULL);
-			}
-			i++;
-		}
+		free(tab[i]);
+		i = i + 1;
 	}
-	return (tab);
+	free(tab);
+	return (1);
 }
 
 char			**ft_split(char const *s, char c)
 {
-	char		**tab;
-	size_t		i;
-	size_t		tab_i;
+	int		i;
+	int		j;
+	int		words;
+	char	**new;
 
-	tab = NULL;
-	tab_i = 0;
-	if (s && c)
+	i = 0;
+	if (!s || !c)
+		return (0);
+	words = ft_count(s, c);
+	new = (char **)malloc(sizeof(char *) * (words + 1));
+	if (new == NULL)
+		return (NULL);
+	while (i < words)
 	{
-		if ((tab = (char **)ft_memalloc(sizeof(char *) * (ft_count(s, c)))))
-		{
-			while (*s)
-			{
-				i = 0;
-				while ((char)*s == c)
-					s++;
-				while (*(s + i) && (char)*(s + i) != c)
-					i++;
-				if (i > 0)
-					tab[tab_i++] = ft_strndup(s, i);
-				s++;
-			}
-			tab[tab_i] = NULL;
-		}
+		while (*s == c && *s)
+			s++;
+		new[i] = (char *)malloc(sizeof(char) * (ft_length(s, c) + 1));
+		j = 0;
+		while (*s != c && *s)
+			new[i][j++] = *s++;
+		new[i][j] = '\0';
+		i++;
 	}
-	return (check_tab(tab, tab_i));
+	free(new);
+	return (new);
 }
